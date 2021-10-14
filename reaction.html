@@ -19,17 +19,17 @@
         <button type="button" class="btn btn-warning" onclick="recordReact()">React Now</button>
     </div>
     <script>
+        let k=3
         myTime= undefined;
         function recordReact() {
             myTime = Date.now();
             console.log(myTime);
         }
         function startTime(){
-            for (let i = 0; i <= 3; i++) {
-                j = (3 - i) * 1000;
+            for (let i = 0; i <= k; i++) {
                 setTimeout(() => {
                     document.getElementById("countdown").innerHTML = i;
-                }, j)
+                }, (k - i) * 1000)
             }
             setTimeout(()=> {
                 if(myTime==undefined)
@@ -43,6 +43,7 @@
                     myTime = undefined
                 }
             },3000)
+            k = Math.round(Math.random() * (10 - 2) + 0);
         }
     </script>
   
